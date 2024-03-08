@@ -84,6 +84,7 @@ const ItemCard = ({
               id={id}
               title={title}
               description={description}
+              status={status.name}
             />
           )}
         </div>

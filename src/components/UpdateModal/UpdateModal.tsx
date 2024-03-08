@@ -8,6 +8,7 @@ interface UpdateModalProps {
   id: any;
   description: string;
   title: string;
+  status: string;
 }
 
 const UpdateModal = ({
@@ -15,18 +16,28 @@ const UpdateModal = ({
   id,
   description,
   title,
+  status,
 }: UpdateModalProps) => {
   const [formData, setFormData] = useState({
     title: `${title}`,
     description: `${description}`,
-    // statusId: 2,
+    statusId: 2,
   });
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    if (name === "statusId") {
+      setFormData({
+        ...formData,
+        [name]: parseInt(value),
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
@@ -36,7 +47,7 @@ const UpdateModal = ({
       setFormData({
         title: "",
         description: "",
-        // statusId: 2
+        statusId: 2,
       });
       setShowModal(false);
       toast.success("Item updated");
@@ -79,6 +90,20 @@ const UpdateModal = ({
           className={styles.container__input}
           placeholder="Notes"
         />
+      </div>
+
+      <div>
+        <select
+          id="statusId"
+          name="statusId"
+          value={formData.statusId}
+          onChange={handleChange}
+          className={styles.container__input}
+        >
+          <option value={2}>Not Started</option>
+          <option value={1}>In Progress</option>
+          <option value={4}>Completed</option>
+        </select>
       </div>
 
       <button className={styles.container__button} type="submit">
