@@ -18,7 +18,7 @@ You'll also need to run the backend server, which can be found at https://github
 - **Add tasks**: Easily add new tasks to your to-do list.
 - **Delete tasks**: Remove tasks from your list when they are completed or no longer needed.
 - **Update tasks**: Modify existing tasks to keep your list organised and up to date.
-- **Testing**: The project includes comprehensive testing using TypeScript and Jest to ensure reliability and stability.
+<!-- - **Testing**: The project includes comprehensive testing using TypeScript and Jest to ensure reliability and stability. -->
 - **Technologies used**: React, SASS, TypeScript, Jest, Spring and Java (for the backend).
 
 ## Usage
@@ -42,6 +42,8 @@ Contributions are welcome! If you encounter any issues or have suggestions for i
 ## Improvements
 
 As my skills expand, I plan to make the To-Do List application even more user-friendly and feature-rich. Some of the improvements I aim to implement include:
+
+- **Complete Testing**: Write and run Jest tests
 
 - **Simplified User Interface**: Replace modals with more intuitive user interactions to streamline the task management process.
 - **Enhanced Filtering Options**: Provide additional filter options such as sorting tasks by newest to oldest, oldest to newest, and based on priority.
